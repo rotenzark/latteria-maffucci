@@ -437,9 +437,14 @@ window.bespokeHeroEntrance = function () {
       document.querySelectorAll('[' + dattr + ']').forEach(function (el) {
         var key = el.getAttribute(dattr);
         var store = originals[dattr];
-        if (!(key in store)) store[key] = target ? el.getAttribute(target) : el.textContent;
+        /* innerHTML, NON textContent: gli elementi tradotti contengono
+           quasi sempre markup (<strong>, <br>) e con textContent il primo
+           passaggio a EN lo appiattisce — tornando in italiano il grassetto
+           non torna più. I valori del dizionario sono statici e scritti da
+           noi. (20/7/2026: la flotta era già così, il boilerplate no.) */
+        if (!(key in store)) store[key] = target ? el.getAttribute(target) : el.innerHTML;
         var val = lang === 'en' && SITE.EN[key] !== undefined ? SITE.EN[key] : store[key];
-        if (target) el.setAttribute(target, val); else el.textContent = val;
+        if (target) el.setAttribute(target, val); else el.innerHTML = val;
       });
     });
     renderHours();
