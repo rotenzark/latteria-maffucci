@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
 <title>Latteria Maffucci — Trattoria a Dergano, Milano | Via Maffucci 24</title>
 <meta name="description" content="Ex latteria di quartiere a Dergano, Milano, ristorante dal 1988: a mezzogiorno la trattoria con la lavagna del giorno, la sera il pesce in un turno unico alle 20:30. Via Privata Angiolo Maffucci 24. 4,7 su 498 recensioni Google.">
 <link rel="canonical" href="https://rotenzark.github.io/latteria-maffucci/">
@@ -20,9 +21,7 @@
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="img/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Petrona:ital,wght@0,400;0,500;0,700;1,400&family=Epilogue:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css?v=1">
 <link rel="stylesheet" href="css/styles.css?v=1">
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
@@ -47,11 +46,35 @@
     "postalCode": "20158",
     "addressCountry": "IT"
   },
-  "geo": { "@type": "GeoCoordinates", "latitude": 45.498688, "longitude": 9.1719003 },
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "498" },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 45.498688,
+    "longitude": 9.1719003
+  },
   "openingHoursSpecification": [
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "12:30", "closes": "14:30" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday","Thursday","Friday","Saturday"], "opens": "20:30", "closes": "23:30" }
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "12:30",
+      "closes": "14:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "20:30",
+      "closes": "23:30"
+    }
   ]
 }
 </script>
@@ -290,11 +313,11 @@
       <a class="cta cta-big" href="tel:+3902375614" data-i18n="dove.cta">Chiama per prenotare</a>
     </div>
     <div class="dove-map reveal">
-      <iframe
+      <div class="mappa-clic" data-mappa-clic style="--mappa-h: 450px"><template><iframe
         title="Mappa: Latteria Maffucci, Via Angiolo Maffucci 24, Milano"
         data-i18n-title="dove.maptitle"
         src="https://www.google.com/maps?q=Latteria+Maffucci,+Via+Angiolo+Maffucci+24,+20158+Milano&output=embed"
-        width="600" height="450" style="border:0" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        width="600" height="450" style="border:0" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe></template><div class="mappa-clic__velo"><a class="mappa-clic__btn" href="https://www.google.com/maps/search/?api=1&amp;query=Latteria%20Maffucci%2C%20Via%20Angiolo%20Maffucci%2024%2C%2020158%20Milano" target="_blank" rel="noopener">Mostra la mappa</a><p class="mappa-clic__nota">La mappa è di Google: aprendola, Google riceve il tuo indirizzo IP e può usare i suoi cookie.</p></div></div>
     </div>
   </div>
 </section>
@@ -329,7 +352,7 @@
   </div>
   <p class="foot-credit">
     <span data-i18n="foot.demo">Sito dimostrativo realizzato da</span>
-    <a href="https://bespokestud.io" target="_blank" rel="noopener">Bespoke Studio</a>
+    <a href="https://bespokestud.io" target="_blank" rel="noopener">Bespoke Studio</a> · <a href="privacy.html">Privacy</a>
   </p>
 </footer>
 
@@ -343,5 +366,6 @@
   <img id="lightboxImg" src="" alt="">
 </div>
 
+<script src="js/mappa-clic.js?v=1" defer></script>
 </body>
 </html>
